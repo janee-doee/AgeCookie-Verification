@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+   body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(8, 8, 8, 1);
+  overflow: hidden;
+}
+
+.gradient-border {
+  border: 3px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  height: 600px;
+  width: 700px;
+  font-family: Lato, sans-serif;
+  text-transform: uppercase;
+  color: rgba(254, 254, 254, 1);
+  background: rgba(8, 8, 8, 1);
+  border-radius: 3px;
+}
+
+.gradient-border::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * 3px);
+  left: calc(-1 * 3px);
+  z-index: -1;
+  width: calc(100% + 3px * 2);
+  height: calc(100% + 3px * 2);
+  background:
+  linear-gradient(
+    60deg,
+    #db3eb1,
+    #a65ff2,
+    #f25fd0,
+    #f25f61,
+    #f2cb5f,
+    #fb86db,
+    #5ff2f0
+  );
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * 3px);
+  animation: moveGradient 4s alternate infinite;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.age-verify-content {
+  position: absolute;
+  display: flex;
+  width: 600px;
+  height: 100%;
+  letter-spacing: 1.5px;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.age-verify-content .frame-title {
+  font-size: 35px;
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+}
+
+.age-verify-content .frame-subtitle {
+  font-size: 25px;
+  font-weight: 500;
+  color: rgba(254, 254, 254, 1);
+  padding: 20px;
+}
+
+.btn,
+button {
+  display: block;
+  width: 80%;
+  color: #db3eb1;
+  border-radius: 5px;
+  margin: 30px auto;
+  padding: 20px 25px;
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  filter: drop-shadow(1px 1px 5px #db3eb1) contrast(2) brightness(2);
+}
+
+#Yes {
+  background-color: rgba(34, 34, 34, 0.8);
+  border: 2px solid #db3eb1;
+  margin-bottom: 60px;
+}
+
+#Yes:hover {
+  color: black;
+  background-color: #db3eb1;
+  filter: drop-shadow(0 0 8px #db3eb1) contrast(2) brightness(2);
+}
+
+#No {
+  color: rgba(8, 8, 8, 1);
+  background-color: #db3eb1;
+  border: none;
+}
+
+#No:hover {
+  color: #db3eb1;
+  background-color: rgba(8, 8, 8, 1);
+  border: 2px solid #db3eb1;
+}
+
+@media only screen and (max-width: 600px) {
+  .age-verify-content {
+    max-width: 350px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .age-verify-content p {
+    max-width: 280px;
+    font-size: 80%;
+  }
+}
